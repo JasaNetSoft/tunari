@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<center><h3>Lista de departamentos con sus carreras</h3></center>
+
+<%= link_to 'Registrar Nuevo', new_carrera_path, :class => "btn btn-success" %>
+
+<div class="col-xs-12">
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>N°</th>
+      <th>Fecha de registro</th>
+      <th>Carrera</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carreras.each do |carrera| %>
+      <tr>
+        <td><%= carrera.id %></td>
+        <td><%= carrera.created_at.to_s %></td>
+        <td><%= carrera.name %></td>
+
+        <td><%= link_to 'Editar datos', edit_carrera_path(carrera), :class => 'btn btn-warning'  %></td>
+        <td><%= link_to 'Eliminar', carrera, method: :delete, data: { confirm: 'Esta seguro?' },  :class => 'btn btn-danger'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

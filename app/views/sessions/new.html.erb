@@ -1,0 +1,17 @@
+<% provide(:title, "Iniciar sesión") %>
+
+<center>
+<h1>Iniciar sesión</h1>
+</center>
+<div class="row">
+  <div class="col-xs-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :Email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :Contraseña %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <br>
+      <%= f.submit "Entrar", :class => "btn btn-lg btn-primary btn-block" %>
+    <% end %>
+  </div>
+</div>

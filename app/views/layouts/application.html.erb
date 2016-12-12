@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title><%= full_title(yield(:title)) %></title> 
+<%= csrf_meta_tags %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/shim' %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+  	<div class="container">
+    <div id="notice_wrapper">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+    	<%= yield %>
+    </div>
+  </body>
+</html>
+
+<script>
+$(document).ready(function() {
+    $("#notice_wrapper").fadeIn("slow").delay(1000).fadeOut("slow");
+});
+</script>

@@ -1,0 +1,14 @@
+<% provide(:title, 'Editar Recepción') %>
+<% provide(:button_text, 'Guardar cambios') %>
+<center><h3>Actualizar Información</h3></center>
+
+<%= render 'form', recepcion: @recepcion %>
+
+<div class="col-lg-4 col-lg-offset-2">
+<ul style="text-align:left", class="pager">
+<li><%= link_to 'Ver detalle', @recepcion %> |
+<%= link_to 'Volver atras', recepcions_path %></li>
+</ul>
+</div>
+
+

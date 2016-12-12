@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Información del Usuario</h1>
+
+<p>
+  <strong>Numero de registrado:</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @user.role %>
+</p>
+
+<p>
+  <strong>Fecha de registro:</strong>
+  <%= @user.created_at.to_s %>
+</p>
+
+<p>
+  <strong>Fecha de actualización:</strong>
+  <%= @user.updated_at.to_s %>
+</p>
+
+<ul style="text-align:left", class="pager">
+<li><%= link_to 'Editar datos', edit_user_path(@user) %> |
+<%= link_to 'Volver atras', users_path %></li>
+</ul>

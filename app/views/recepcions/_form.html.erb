@@ -1,0 +1,123 @@
+<%= form_for(recepcion) do |f| %>
+
+<div class="container">
+<div class="row">
+<center><h5>Cantidad de registrados: <%= Recepcion.last ? Recepcion.last.id : 1 %></h5></center>
+</div>
+</div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+  <div class="control-group<%= @recepcion.errors[:remitente].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Remitente (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :remitente, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese remitente porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @recepcion.errors[:remitente].any? ? @recepcion.errors[:remitente].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+      <div class="col-lg-4">
+
+  <div class="control-group<%= @recepcion.errors[:destinatario].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Destinatario (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :destinatario, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese destinatario porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @recepcion.errors[:destinatario].any? ? @recepcion.errors[:destinatario].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+   <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+ <div class="control-group<%= @recepcion.errors[:carrera].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Carrera (*)</b></h4>
+      <div class="controls">
+   <%= f.collection_select :carrera, Carrera.all, :name, :name, {:prompt => 'Seleccionar carrera'}, {:class => 'form-control input-sm'} %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @recepcion.errors[:carrera].any? ? @recepcion.errors[:carrera].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+ 
+
+      </div>
+      <div class="col-lg-4">
+
+  <div class="control-group<%= @recepcion.errors[:numero].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Cite</b></h4>
+      <div class="controls">
+        <%= f.text_field :numero, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese sigla porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @recepcion.errors[:numero].any? ? @recepcion.errors[:numero].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+
+  <label><h4  class="text-success"><b>Elegir estado (*)</b></h4></label>
+  <input id="estado1" name="recepcion[estado]" type="radio" value="Pendiente" checked=""> 
+  Pendiente
+  <input id="estado2" name="recepcion[estado]" type="radio" value="Proceso"> 
+  Proceso
+  <input id="estado1" name="recepcion[estado]" type="radio" value="Aceptado"> 
+  Aceptado
+  <input id="estado2" name="recepcion[estado]" type="radio" value="Rechazado"> 
+  Rechazado
+  <input id="estado2" name="recepcion[estado]" type="radio" value="Finalizado"> 
+  Finalizado
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2">
+
+  <div class="control-group<%= @recepcion.errors[:referencia].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Referencia de la correspondencia (*)</b></h4>
+      <div class="controls">
+        <%= f.text_area :referencia, :class => 'form-control input-sm', :maxlength => "200", :placeholder => "Ingrese referencia de la correspondencia porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @recepcion.errors[:referencia].any? ? @recepcion.errors[:referencia].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+<center><%= f.submit yield(:button_text), class: "btn btn-primary" %></center>
+
+<% end %>

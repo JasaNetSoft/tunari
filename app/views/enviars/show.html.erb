@@ -1,0 +1,49 @@
+<h1>Información</h1>
+
+<p>
+  <strong>Registrado por:</strong>
+  <%= @enviar.username %>
+</p>
+
+<p>
+  <strong>Remitente:</strong>
+  <%= @enviar.remitente %>
+</p>
+
+<p>
+  <strong>Destinatario:</strong>
+  <%= @enviar.destinatario %>
+</p>
+
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @enviar.carrera %>
+</p>
+
+<p>
+  <strong>Fecha de registro:</strong>
+  <%= @enviar.created_at %>
+</p>
+
+<p>
+  <strong>Referencia:</strong>
+  <%= @enviar.referencia %>
+</p>
+
+<p>
+<% unless @enviar.numero.empty? %>
+  <strong>Numero:</strong>
+  <%= @enviar.numero %>
+<% end %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @enviar.estado %>
+</p>
+
+<ul style="text-align:left", class="pager">
+<li><%= link_to 'Editar detalle', edit_enviar_path(@enviar) %>|
+<%= link_to 'Volver atras', enviars_path %></li>
+</ul>

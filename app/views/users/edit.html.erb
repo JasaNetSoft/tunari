@@ -1,0 +1,10 @@
+<% provide(:title, 'Editar usuario') %>
+<% provide(:button_text, 'Guardar cambios') %>
+<center><h3>Actualizar información</h3></center>
+<%= render 'form' %>
+
+<ul style="text-align:left", class="pager">
+<li><%= link_to 'Ver detalle', @user %> |
+<%= link_to 'Volver atras', users_path %></li>
+</ul>
+

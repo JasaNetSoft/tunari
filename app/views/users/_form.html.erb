@@ -1,0 +1,89 @@
+<%= form_for(@user) do |f| %>
+
+<br><center>
+<h5>Numero de registrados: <%= User.last ? User.last.id : 1 %></h5>
+</center>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+  <div class="control-group<%= @user.errors[:name].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Nombre (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese nombre completo porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+      <h4 class="text-danger"><%= @user.errors[:name].any? ? @user.errors[:name].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+      <div class="col-lg-4">
+
+  <div class="control-group<%= @user.errors[:email].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Correo (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :email, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese correo porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+        <h4 class="text-danger"><%= @user.errors[:email].any? ? @user.errors[:email].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+  <div class="control-group<%= @user.errors[:password].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Contraseña (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :password, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese contraseña porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+        <h4 class="text-danger"><%= @user.errors[:password].any? ? @user.errors[:password].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+      <div class="col-lg-4">
+
+  <div class="control-group<%= @user.errors[:password_confirmation].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Confirmar contraseña (*)</b></h4>
+      <div class="controls">
+        <%= f.text_field :password_confirmation, :class => 'form-control input-sm', :maxlength => "20", :placeholder => "Ingrese contraseña para confirmar porfavor" %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+        <h4 class="text-danger"><%= @user.errors[:password_confirmation].any? ? @user.errors[:password_confirmation].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-2">
+
+  <div class="control-group<%= @user.errors[:role].any? ? " error" : "" %>">
+    <h4  class="text-success"><b>Rol (*)</b></h4>
+      <div class="controls">
+  <%= f.select :role, [ 'secretaria', 'docente' ], {prompt: "Seleccionar rol"}, {:class => 'form-control input-sm'} %>
+        <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
+        <span class="help-inline">
+        <h4 class="text-danger"><%= @user.errors[:role].any? ? @user.errors[:role].to_s[/\w([^"]*)/] : "" %></h4></span>
+      </div>
+  </div>
+
+      </div>
+    </div>
+  </div>
+
+<br><center><%= f.submit yield(:button_text), class: "btn btn-primary" %></center>
+
+<% end %>

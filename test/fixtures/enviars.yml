@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  remitente: MyString
+  destinatario: MyString
+  referencia: MyText
+  numero: MyString
+  estado: MyString
+  carrera: MyString
+
+two:
+  username: MyString
+  remitente: MyString
+  destinatario: MyString
+  referencia: MyText
+  numero: MyString
+  estado: MyString
+  carrera: MyString

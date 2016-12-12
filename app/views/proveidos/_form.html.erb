@@ -1,0 +1,22 @@
+<%= form_for(proveido) do |f| %>
+  <% if proveido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(proveido.errors.count, "error") %> prohibited this proveido from being saved:</h2>
+
+      <ul>
+      <% proveido.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

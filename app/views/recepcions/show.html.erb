@@ -1,0 +1,50 @@
+<h1>Información</h1>
+
+<p>
+  <strong>Registrado por:</strong>
+  <%= @recepcion.username %>
+</p>
+
+<p>
+  <strong>Remitente:</strong>
+  <%= @recepcion.remitente %>
+</p>
+
+<p>
+  <strong>Destinatario:</strong>
+  <%= @recepcion.destinatario %>
+</p>
+
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @recepcion.carrera %>
+</p>
+
+<p>
+  <strong>Fecha de registro:</strong>
+  <%= @recepcion.created_at %>
+</p>
+
+<p>
+  <strong>Referencia:</strong>
+  <%= @recepcion.referencia %>
+</p>
+
+<p>
+<% unless @recepcion.numero.empty? %>
+  <strong>Numero:</strong>
+  <%= @recepcion.numero %>
+<% end %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @recepcion.estado %>
+</p>
+
+
+<ul style="text-align:left", class="pager">
+<li><%= link_to 'Editar detalle', edit_recepcion_path(@recepcion) %> |
+<%= link_to 'Volver atras', recepcions_path %></li>
+</ul>

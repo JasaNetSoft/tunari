@@ -1,0 +1,2 @@
+class Proveido < ApplicationRecord
+end

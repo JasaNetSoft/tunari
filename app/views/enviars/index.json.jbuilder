@@ -1,0 +1,1 @@
+json.array! @enviars, partial: 'enviars/enviar', as: :enviar
