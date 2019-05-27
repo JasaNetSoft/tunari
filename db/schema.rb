@@ -10,53 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161212203030) do
+ActiveRecord::Schema.define(version: 2019_05_27_041648) do
 
   create_table "carreras", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "enviars", force: :cascade do |t|
-    t.string   "username"
-    t.string   "remitente"
-    t.string   "destinatario"
-    t.text     "referencia"
-    t.string   "numero"
-    t.string   "estado"
-    t.string   "carrera"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string "username"
+    t.string "remitente"
+    t.string "destinatario"
+    t.text "referencia"
+    t.string "numero"
+    t.string "estado"
+    t.string "carrera"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "proveidos", force: :cascade do |t|
-    t.string   "nombre"
+    t.string "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "recepcions", force: :cascade do |t|
-    t.string   "username"
-    t.string   "remitente"
-    t.string   "destinatario"
-    t.text     "referencia"
-    t.string   "numero"
-    t.string   "estado"
-    t.string   "carrera"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string "username"
+    t.string "remitente"
+    t.string "destinatario"
+    t.text "referencia"
+    t.string "numero"
+    t.string "estado"
+    t.string "carrera"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "depart"
-    t.string   "cargo"
-    t.string   "name"
-    t.string   "email"
-    t.string   "role"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string "depart"
+    t.string "cargo"
+    t.string "name"
+    t.string "email"
+    t.string "role"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
