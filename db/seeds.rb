@@ -12,19 +12,19 @@ User.create(name: "Luis Perez",
      		email: "jasa@gmail.com",
 			password: 'foobar',
 			password_confirmation: 'foobar',
-			role: "secretaria")
+			role: "personal")
 
 User.create(name: "Juan Antonio",
 			email: "jasa1@gmail.com",
 			password: 'foobar',
 			password_confirmation: 'foobar',
-			role: "secretaria")
+			role: "personal")
 
 User.create(name: "Luis Alberto",
 			email: "jasa2@gmail.com",
 			password: 'foobar',
 			password_confirmation: 'foobar',
-			role: "personalucb")
+			role: "personal")
 
 carrera = Carrera.create(name: 'Administración de Empresas')
 carrera = Carrera.create(name: 'Antropología')

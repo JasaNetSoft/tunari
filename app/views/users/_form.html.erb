@@ -73,7 +73,7 @@
   <div class="control-group<%= @user.errors[:role].any? ? " error" : "" %>">
     <h4  class="text-success"><b>Rol (*)</b></h4>
       <div class="controls">
-  <%= f.select :role, [ 'secretaria', 'docente' ], {prompt: "Seleccionar rol"}, {:class => 'form-control input-sm'} %>
+  <%= f.select :role, [ 'personal', 'gerente' ], {prompt: "Seleccionar rol"}, {:class => 'form-control input-sm'} %>
         <%#Obtener solo el mensaje con la expresion regular /\w([^]*)/%>
         <span class="help-inline">
         <h4 class="text-danger"><%= @user.errors[:role].any? ? @user.errors[:role].to_s[/\w([^"]*)/] : "" %></h4></span>
